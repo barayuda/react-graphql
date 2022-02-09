@@ -44,6 +44,7 @@ const toggleButton = css({
 	marginLeft: '2rem',
 	fontSize: '2rem',
 	background: 'none',
+  cursor: 'pointer',
 })
 
 const navbarMenuWrapper = css({
@@ -86,16 +87,12 @@ function Navbar() {
 		<>
 			<IconContext.Provider value={{color: '#fff'}}>
 				<div css={navbar}>
-					<Link to="#" css={toggleButton}>
-						<FaIcons.FaBars onClick={showSideBar} />
-					</Link>
+          <FaIcons.FaBars css={toggleButton} onClick={showSideBar} />
 				</div>
 				<nav css={sideBar({sidebar})}>
 					<ul css={navbarMenuWrapper} onClick={showSideBar}>
 						<li css={toggleButtonWrapper}>
-							<Link to='#' css={toggleButton}>
-								<IoIcons.IoCloseOutline />
-							</Link>
+              <IoIcons.IoCloseOutline css={toggleButton} />
 						</li>
 						{SideBar.map((item, index) => {
 							return (

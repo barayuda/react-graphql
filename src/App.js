@@ -19,9 +19,24 @@ import {
 const link = from([
   new HttpLink({ uri: 'https://graphql-pokeapi.vercel.app/api/graphql' })
 ])
+const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        PokemonList: {
+          results: {
+            merge(existing = [], incoming) {
+              return [...existing, ...incoming]
+            },
+          }
+        }
+      }
+    }
+  }
+})
 
 const client = new ApolloClient({
-  cache: new InMemoryCache(),
+  cache,
   link,
 })
 
@@ -31,9 +46,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/my-list' component={MyList} />
-          <Route path='/' exact component={PokemonList} />
-          <Route path='/pokemon-detail' component={PokemonDetail} />
+          <Route path='/my-list' element={<MyList />} />
+          <Route path='/' exact element={<PokemonList />} />
+          <Route path='/pokemon-detail' element={<PokemonDetail />} />
         </Routes>
       </Router>
     </ ApolloProvider>    

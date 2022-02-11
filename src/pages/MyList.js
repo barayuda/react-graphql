@@ -54,7 +54,7 @@ const emptyText = css({
 
 const button = css({
   border: 'none',
-  background: '#fa2d48',
+  background: '#42b549',
   borderRadius: '4px',
   color: '#fff',
   cursor: 'pointer',

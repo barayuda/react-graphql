@@ -9,7 +9,7 @@ import { IconContext } from 'react-icons'
 
 const navbar = css({
 	backgroundColor: '#42b549;',
-	height: '80px',
+	height: '4rem',
 	display: 'flex',
 	justifyContent: 'flex-start',
 	alignItems: 'center',
@@ -18,7 +18,7 @@ const navbar = css({
 
 const sideBar = ({ sidebar }) => css`
 	background-color: #42b549;
-	width: 250px;
+	width: 20rem;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -26,6 +26,7 @@ const sideBar = ({ sidebar }) => css`
 	top: 0;
 	left: -100%;
 	transition: 850ms;
+  z-index: 3;
 	${sidebar && `
 		left: 0;
 		transition: 350ms;
@@ -57,7 +58,7 @@ const navbarItem = css({
 	alignItems: 'center',
 	padding: '8px 0px 8px 16px',
 	listStyle: 'none',
-	height: '60px',
+	height: '3rem',
 	'& a': {
 		textDecoration: 'none',
 		color: '#f5f5f5',

@@ -70,7 +70,7 @@ const navbarItem = css({
 		borderRadius: '4px',
 	},
 	'& a:hover': {
-		backgroundColor: '#F87575'
+		backgroundColor: '#259c00'
 	}
 })
 

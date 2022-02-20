@@ -36,7 +36,7 @@ const card = css({
   '& > svg:last-child': {
     transform: 'scale(2)',
     '&:hover': {
-      color: '#fa2d48',
+      color: '#42b549',
     }
   },
   '& > p': {
@@ -75,7 +75,7 @@ const modalSlot = css({
     textAlign: 'center',
   },
   '& > svg': {
-    color: '#fa2d48',
+    color: '#42b549',
     marginBottom: '30px',
     transform: 'scale(4)',
   },
@@ -99,10 +99,10 @@ const modalSlot = css({
     },
     '& > button:first-of-type': {
       background: '#fff',
-      color: '#fa2d48',
+      color: '#42b549',
     },
     '& > button:last-child': {
-      background: '#fa2d48',
+      background: '#42b549',
       color: '#fff',
     },
   },
@@ -166,7 +166,7 @@ function MyList() {
             </> :
             <>
               <p css={emptyText}>Your Pokémon list is empty!</p>
-              <button css={button} onClick={() => { history.push('/') }}>Catch Some!</button>
+              <button css={button} onClick={() => { history('/') }}>Catch Some!</button>
             </>
         }
       </div>
